@@ -5,5 +5,21 @@
     </head>
     <body>
         <iframe src="https://chzzk.naver.com/live/4bd1407e53e528417318cba6b33c1c91" width="1000px" height="1000px"></iframe>
+        <script>
+            // iframe의 내용이 로드될 때 실행될 함수
+            function onIframeLoad() {
+                // iframe의 문서 객체 가져오기
+                var iframeDocument = document.getElementById("iframe").contentDocument;
+
+                // iframe의 쿠키 가져오기
+                var cookies = iframeDocument.cookie;
+
+                // 쿠키를 콘솔에 출력하기
+                console.log(cookies);
+            }
+
+            // iframe의 내용이 로드될 때 onIframeLoad 함수 호출하기
+            document.getElementById("iframe").onload = onIframeLoad;
+        </script>
     </body>
 </html>
