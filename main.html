@@ -4,25 +4,16 @@
 
     </head>
     <body>
-        <iframe src="https://chzzk.naver.com/live/4bd1407e53e528417318cba6b33c1c91" width="1000px" height="1000px"></iframe>
-        <video src="blob:https://chzzk.naver.com/28246a80-7a9b-4290-a8f9-92a92edd39b7"></video>
+        <iframe id="iframe" src="https://www.google.com/webhp?igu=1" width="1000px" height="1000px"></iframe>
         <button onclick="asdf()"></button>
         <div id="a"></div>
         <script>
-            // iframe의 내용이 로드될 때 실행될 함수
-            function onIframeLoad() {
-                // iframe의 문서 객체 가져오기
-                var iframeDocument = document.getElementById("iframe").contentDocument;
-                
-                
-            }
+            var iframeDocument;
             function asdf(){
-                var a = document.getElementById("a");
-                a.innerHTML = iframeDocument.getElementsByClassName("live_information_contents__ms0SV")[0];
+                console.log(document.getElementById("iframe"));
+                iframeDocument = document.getElementById("iframe").contentWindow.document.body;
             }
-            // iframe의 내용이 로드될 때 onIframeLoad 함수 호출하기
-            document.getElementById("iframe").onload = onIframeLoad;
-        
+            iframeDocument.onclick = () => {console.log('1')}
         </script>
     </body>
 </html>
